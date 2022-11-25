@@ -1,0 +1,136 @@
+.menu.active{
+    transform: translateX(0);
+    animation: slide 500ms running ease-in-out alternate ;
+}
+@keyframes slide {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.menu{
+    transform: translateX(100%);
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    .blur{
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(1px);
+        position: absolute;
+    }
+    .menu__cont{
+        position: fixed;
+        right: 0;
+        width: 35%;
+        height: 100%;
+        color: black;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 1);
+        h2{
+            @apply text-center my-5 text-3xl font-bold ;
+            span{
+                background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+                @apply text-transparent bg-clip-text;
+            }
+        }
+        .ChangeTodo{
+            width: 100%;
+            input{
+                background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+                @apply appearance-none outline-none text-white my-5 placeholder:text-white px-5 py-2 w-full rounded-lg hover:opacity-90;
+            }
+        }
+        .btnOption{
+            @apply my-5 flex justify-between;
+            .complited{
+                background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+                @apply px-5 py-2 text-white rounded-xl hover:opacity-90
+            }
+            .delete{
+                background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+                @apply px-5 py-2 text-white rounded-xl hover:opacity-90;
+            }
+        }
+        .addFile{
+            background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+            @apply w-full relative flex flex-col items-center justify-center rounded-xl text-white px-5 py-2;
+            input{
+                @apply opacity-0 overflow-hidden absolute w-full top-0
+            }
+            .updateFile{
+                @apply flex flex-row w-full justify-center cursor-pointer items-center;
+                p{
+                    @apply w-full text-white mx-2 rounded-lg text-center;
+                } 
+ 
+            }
+            button{
+                @apply w-full
+            }  
+        }
+        .files{
+            .file{
+                background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+                @apply flex w-full my-2 rounded-xl py-2 px-5 text-white justify-between items-center;
+                p{
+                    @apply cursor-pointer hover:opacity-90;
+                }
+                button{
+                    border: 1px solid #fff;
+                    @apply rounded-full px-2 py-1 cursor-pointer hover:opacity-90;
+                }
+            }
+        }
+    }
+}
+
+
+.bur__cont{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .SettingsBtn{
+        
+        width: 30px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        span {
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);            
+        }
+        ::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0px;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+        }
+        ::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 30px;
+            height: 3px;
+            background: linear-gradient(90.12deg, #6C6EEA 0%, #D776EF 90%);
+        }
+    }
+}
